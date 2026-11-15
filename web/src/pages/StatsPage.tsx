@@ -37,13 +37,25 @@ export function StatsPage() {
   const peak = peakPass(data);
   const low = data.dates.filter((p) => p.flooded_km2 < 0.05).length;
 
+  // Context layers filled by the data pipeline (Member 2). Until the WorldCover /
+  // rainfall / DSWx re-run lands they arrive empty, and the spec is explicit that
+  // these zeros "are not results" — so the UI shows them as pending, never as 0.
+  const rainPending = useMemo(() => data.dates.every((p) => p.rain_prev3d_mm === null), [data.dates]);
+  const streetsPending = useMemo(() => data.dates.every((p) => p.urban_signal_km2 === 0), [data.dates]);
+  const mangrovePending = useMemo(
+    () => data.dates.every((p) => p.tidal_mangrove_water_km2 === 0),
+    [data.dates],
+  );
+
   const chartData = useMemo(
     () =>
       data.dates.map((p) => ({
         date: p.date,
         label: formatShortDate(p.date, lang),
         flood: p.flooded_km2,
-        rain: p.rain_prev3d_mm ?? 0,
+        // Keep null (not 0) so Recharts leaves a gap instead of drawing a flat
+        // "0 mm" line that would read as a real measurement.
+        rain: p.rain_prev3d_mm,
         threshold: p.water_threshold_db,
       })),
     [data.dates, lang],
@@ -98,9 +110,15 @@ export function StatsPage() {
             <span className="flex items-center gap-1">
               <span className="h-2 w-2 rounded-sm bg-secondary" /> km²
             </span>
-            <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-secondary-container" /> {t("common.rain")} (mm)
-            </span>
+            {rainPending ? (
+              <Pill tone="neutral" className="normal-case tracking-normal">
+                {t("map.rainNone")}
+              </Pill>
+            ) : (
+              <span className="flex items-center gap-1">
+                <span className="h-2 w-2 rounded-full bg-secondary-container" /> {t("common.rain")} (mm)
+              </span>
+            )}
           </div>
         </div>
         <div className="h-[230px] w-full">
@@ -247,10 +265,10 @@ export function StatsPage() {
                       {formatNumber(pass.flooded_km2, lang)}
                     </td>
                     <td className="px-2 py-2 text-right text-on-surface-variant">
-                      {formatNumber(pass.urban_signal_km2, lang)}
+                      {streetsPending ? "—" : formatNumber(pass.urban_signal_km2, lang)}
                     </td>
                     <td className="px-2 py-2 text-right text-on-surface-variant">
-                      {formatNumber(pass.tidal_mangrove_water_km2, lang)}
+                      {mangrovePending ? "—" : formatNumber(pass.tidal_mangrove_water_km2, lang)}
                     </td>
                     <td className="px-2 py-2 text-right text-on-surface-variant">
                       {formatNumber(pass.water_threshold_db, lang, 1)}
