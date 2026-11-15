@@ -87,10 +87,12 @@ export const MAP_DEFAULTS = {
   maxZoom: 16,
 };
 
-/** CARTO dark basemap; the app stays usable if tiles fail (plain dark canvas). */
-export const TILE_URL = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+/** Esri Dark Gray Canvas basemap (no API key required); the app stays usable if
+ *  tiles fail (plain dark canvas). Note the Esri tile path order is {z}/{y}/{x}. */
+export const TILE_URL =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}";
 export const TILE_ATTRIBUTION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+  'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors';
 
 export async function loadStats(signal?: AbortSignal): Promise<FloodStats> {
   const res = await fetch(assetUrl("stats.json"), { signal, cache: "no-cache" });
