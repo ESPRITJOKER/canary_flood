@@ -1,22 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "services": {
-    "app": {
-      "root": ".",
-      "runtime": "python"
-    },
-    "web": {
-      "root": "web",
-      "framework": "vite"
-    }
-  },
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": {
-        "service": "app"
-      }
+      "source": "/((?!api/|assets/|data/|favicon).*)",
+      "destination": "/index.html"
     }
   ]
 }
-
