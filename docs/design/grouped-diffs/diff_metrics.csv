@@ -1,0 +1,4 @@
+screen,reference,compared_region_px,width_compared,height_compared,mean_abs_diff,max_abs_diff,pct_pixels_changed,diff_threshold
+main_map_dashboard,landing_overview,608000,380,1600,72.078,255,67.6,8
+before_after_comparison,landing_overview,608000,380,1600,66.947,255,64.7,8
+persistent_hotspots,landing_overview,512000,320,1600,58.599,255,62.78,8

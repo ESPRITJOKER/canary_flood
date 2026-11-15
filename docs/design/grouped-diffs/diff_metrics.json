@@ -1,0 +1,73 @@
+{
+  "reference": "landing_overview",
+  "note": "Absolute per-pixel difference on the overlapping region (top-left aligned, cropped to the narrowest width, no resampling). Diff images are grayscale (max channel delta); '_x4' versions are multiplied by 4 for visibility. 0 = identical pixel.",
+  "screens": [
+    {
+      "name": "landing_overview",
+      "file": "screens/01_landing_overview.png",
+      "size": [
+        380,
+        1600
+      ]
+    },
+    {
+      "name": "main_map_dashboard",
+      "file": "screens/02_main_map_dashboard.png",
+      "size": [
+        510,
+        1600
+      ]
+    },
+    {
+      "name": "before_after_comparison",
+      "file": "screens/03_before_after_comparison.png",
+      "size": [
+        413,
+        1600
+      ]
+    },
+    {
+      "name": "persistent_hotspots",
+      "file": "screens/04_persistent_hotspots.png",
+      "size": [
+        320,
+        1600
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "screen": "main_map_dashboard",
+      "reference": "landing_overview",
+      "compared_region_px": 608000,
+      "width_compared": 380,
+      "height_compared": 1600,
+      "mean_abs_diff": 72.078,
+      "max_abs_diff": 255,
+      "pct_pixels_changed": 67.6,
+      "diff_threshold": 8
+    },
+    {
+      "screen": "before_after_comparison",
+      "reference": "landing_overview",
+      "compared_region_px": 608000,
+      "width_compared": 380,
+      "height_compared": 1600,
+      "mean_abs_diff": 66.947,
+      "max_abs_diff": 255,
+      "pct_pixels_changed": 64.7,
+      "diff_threshold": 8
+    },
+    {
+      "screen": "persistent_hotspots",
+      "reference": "landing_overview",
+      "compared_region_px": 512000,
+      "width_compared": 320,
+      "height_compared": 1600,
+      "mean_abs_diff": 58.599,
+      "max_abs_diff": 255,
+      "pct_pixels_changed": 62.78,
+      "diff_threshold": 8
+    }
+  ]
+}
