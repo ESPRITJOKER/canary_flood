@@ -24,7 +24,7 @@ export function BeforeAfterSlider({ stats, before, after, className }: BeforeAft
   return (
     <div
       className={
-        "relative overflow-hidden rounded-xl bg-[#0b1620] shadow-card ring-1 ring-black/5 " +
+        "relative isolate overflow-hidden rounded-xl bg-[#0b1620] shadow-card ring-1 ring-black/5 " +
         (className ?? "h-[400px]")
       }
     >

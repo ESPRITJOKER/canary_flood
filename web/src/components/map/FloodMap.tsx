@@ -47,7 +47,7 @@ export function FloodMap({
   const hotspots = useMemo(() => hotspotList(stats), [stats]);
 
   return (
-    <div className={cx("relative overflow-hidden rounded-xl bg-[#0b1620]", className)}>
+    <div className={cx("relative isolate overflow-hidden rounded-xl bg-[#0b1620]", className)}>
       <MapContainer
         center={MAP_DEFAULTS.center}
         zoom={MAP_DEFAULTS.zoom}
