@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "on-background": "#0b1c30", "on-surface": "#0b1c30", "on-surface-variant": "#44474e", "surface-container": "#e5eeff", "surface-bright": "#f8f9ff", "tertiary": "#00120f", "surface": "#f8f9ff", "primary-fixed-dim": "#b1c7f0", "primary-fixed": "#d5e3ff", "secondary-container": "#47a1ff", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "secondary": "#0060a8", "on-secondary-fixed": "#001c38", "on-error-container": "#93000a", "surface-variant": "#d3e4fe", "secondary-fixed-dim": "#a2c9ff", "inverse-surface": "#213145", "surface-tint": "#495f82", "on-primary-container": "#778db2", "surface-container-highest": "#d3e4fe", "inverse-on-surface": "#eaf1ff", "tertiary-fixed": "#71f8e4", "on-secondary-fixed-variant": "#004881", "outline": "#74777f", "on-tertiary-fixed-variant": "#005048", "primary": "#001026", "inverse-primary": "#b1c7f0", "on-tertiary-fixed": "#00201c", "on-error": "#ffffff", "error-container": "#ffdad6", "on-tertiary-container": "#009d8d", "background": "#f8f9ff", "tertiary-fixed-dim": "#4fdbc8", "primary-container": "#0b2545", "error": "#ba1a1a", "on-secondary-container": "#003663", "surface-container-high": "#dce9ff", "on-primary-fixed": "#001c3b", "surface-container-low": "#eff4ff", "secondary-fixed": "#d3e4ff", "tertiary-container": "#002a25", "outline-variant": "#c4c6cf", "on-primary-fixed-variant": "#314769" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-md": "1rem", "space-xl": "2rem", "space-lg": "1.5rem", "gutter": "1rem", "margin-tablet": "1.5rem", "space-2xl": "3rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, fontFamily: { "label-lg": ["Inter"], "label-md": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "display-stat-mobile": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "display-stat": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "label-lg": ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.01em", fontWeight: "600" }], "label-md": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.02em", fontWeight: "500" }], "headline-md": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["1.125rem", { lineHeight: "1.75rem", fontWeight: "400" }], "display-stat-mobile": ["2.25rem", { lineHeight: "2.75rem", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["0.875rem", { lineHeight: "1.25rem", fontWeight: "400" }], "headline-sm": ["1.125rem", { lineHeight: "1.5rem", fontWeight: "600" }], "headline-lg-mobile": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-lg": ["2rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "700" }], "display-stat": ["3rem", { lineHeight: "3.5rem", letterSpacing: "-0.03em", fontWeight: "700" }], "body-md": ["1rem", { lineHeight: "1.5rem", fontWeight: "400" }], "label-sm": ["0.6875rem", { lineHeight: "0.875rem", letterSpacing: "0.04em", fontWeight: "600" }] } } } }</script><style>@layer base { html, body { min-height: 100%; margin: 0; padding: 0; } body { -webkit-tap-highlight-color: transparent; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-full"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(11,37,69,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FloodSight Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvqzCSdmeVWk4pBB7A1PQgIUK6Sm4_ALMSAyw919PnZVEtUZsuL_YdNq_XxsVUJUrZ86jb07itNoCwooTtHnaNAznIXBAP2kx3hpveAgN1qbaME3XSlm0vL9ojcWPUUIskD4jjLUiuFwDhWBxHYku1KxPsRrP8mD0SML2EmQlJfO7tkeHG4dDkuvMt9HMdbfInfGPIoHToNHUK4guM0y_ioeC_vkZMBJbAqNJR7qyd"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary-container tracking-tight truncate">FloodSight</span><span class="hidden sm:inline-block text-outline-variant">•</span><span class="hidden sm:inline-block font-label-md text-label-md text-secondary truncate">Map</span></div><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Lions Roar Labs • Douala</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="flex items-center p-0.5 rounded-full bg-surface-container-high"><button class="min-h-[44px] px-2 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">FR</button><button class="min-h-[44px] px-2 py-1 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-primary-container shadow-[0_1px_3px_rgba(11,37,69,0.08)] flex items-center justify-center transition-all" type="button">EN</button></div><button aria-label="Ask AI Briefing" class="min-h-[44px] min-w-[44px] px-2.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center gap-space-xs shadow-[0_2px_4px_rgba(11,37,69,0.12)] hover:bg-secondary transition-all" type="button"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed">auto_awesome</span><span class="hidden md:inline font-label-sm text-label-sm">Ask AI</span></button><button aria-label="Profile" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYj6zi5aomnTCIFbcCiUo-0YWq4GiH2uwco6iPvLw1Q2W8H-bPhwjj23OmAauj30_0lYdz9Z8N1xmgo-GZF9LamPTPPxS6xg8I8pV1JJeytxwYmIMr24cdemyPxWtF5jcvkDjPQO9nJQ8xgi-QpzFDFQFQSJa4wB4vh02jr57h5VF83_H2ILpH992Jllgl5QNU83qkmQmSkpyAcRCMgPBRKr4kV9fKYLA4ktF71yJD"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-6 space-y-space-md">
+<!-- Live Status & Ticker -->
+<div class="px-margin pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-error"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">NISAR Radar Active</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">L-Band SAR 12m</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm bg-surface-container-high px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">satellite_alt</span>
+<span>Pass 06/12</span>
+</div>
+</div>
+<!-- Top Summary Stat Cards Carousel (Swipeable Horizontal Flow) -->
+<div class="w-full overflow-x-auto no-scrollbar px-margin flex gap-space-sm snap-x snap-mandatory">
+<!-- Card 1: Flooded Area -->
+<div class="min-w-[210px] flex-1 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between snap-start">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Flooded Area</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">water</span>
+</div>
+</div>
+<div class="my-space-xs">
+<span class="font-display-stat-mobile text-display-stat-mobile text-primary-container leading-none">18.4</span>
+<span class="font-headline-sm text-headline-sm text-secondary ml-1">km²</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+3.2 km² vs prior pass</span>
+</div>
+</div>
+<!-- Card 2: Most Affected -->
+<div class="min-w-[210px] flex-1 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between snap-start">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Most Affected</span>
+<div class="w-7 h-7 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-md text-headline-md text-primary-container truncate font-bold">Bassa &amp; Makèpè</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">Kambo &amp; Mboppi drainage</div>
+</div>
+<div class="flex items-center gap-1 text-error font-label-sm text-label-sm bg-error-container px-2 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span>
+<span>High vulnerability</span>
+</div>
+</div>
+<!-- Card 3: Rainfall This Week -->
+<div class="min-w-[210px] flex-1 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between snap-start">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rainfall This Week</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">rainy</span>
+</div>
+</div>
+<div class="my-space-xs">
+<span class="font-display-stat-mobile text-display-stat-mobile text-primary-container leading-none">142</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant ml-1">mm</span>
+</div>
+<div class="flex items-center gap-1 text-on-secondary-container font-label-sm text-label-sm bg-secondary-container/20 px-2 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]">thunderstorm</span>
+<span>Monsoon monsoon peak</span>
+</div>
+</div>
+</div>
+<!-- Date Selector Timeline Bar -->
+<div class="px-margin flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">timelapse</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">NISAR Orbit Timeline (Jun – Oct 2026)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">12-Day Cycle</span>
+</div>
+<!-- Timeline Scroller with Integrated Play Controls -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5" id="timelineScroll">
+<!-- Play / Pause Action Button -->
+<button aria-label="Play timeline animation" class="min-h-[40px] min-w-[40px] flex-shrink-0 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform" id="playbackToggle" type="button">
+<span class="material-symbols-outlined text-[20px]" id="playbackIcon">play_arrow</span>
+</button>
+<!-- Date Chips -->
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">04 Jun</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">16 Jun</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">28 Jun</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">10 Jul</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">22 Jul</button>
+<!-- Active Chip -->
+<button class="timeline-chip active-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-secondary text-on-secondary shadow-sm flex items-center gap-1 font-bold" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+          03 Aug
+        </button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">15 Aug</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">27 Aug</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">08 Sep</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">20 Sep</button>
+<button class="timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container" type="button">02 Oct</button>
+</div>
+<!-- Currently Selected Context Subtitle -->
+<div class="flex items-center justify-between pt-1 px-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-primary font-semibold truncate">Pass 6: August 03, 2026 • Post-heavy rain event</span>
+<span class="text-secondary font-label-sm text-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+          Verified
+        </span>
+</div>
+</div>
+</div>
+<!-- Interactive Map Viewport Container -->
+<div class="px-margin flex flex-col space-y-space-xs">
+<!-- Floating Layer Toggles Bar (Horizontal Scrollable Chips) -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<button class="layer-pill min-h-[36px] px-3 py-1 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">layers</span>
+<span>Flood Extent</span>
+</button>
+<button class="layer-pill min-h-[36px] px-3 py-1 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px] text-error-container">warning</span>
+<span>Hotspots (Orange/Red)</span>
+</button>
+<button class="layer-pill min-h-[36px] px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-1.5 flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">domain</span>
+<span>Quartiers</span>
+</button>
+<button class="layer-pill min-h-[36px] px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-1.5 flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">water_drop</span>
+<span>Permanent Water</span>
+</button>
+</div>
+<!-- Map Canvas Card with Vector HUD & Overlays -->
+<div class="relative w-full h-[380px] rounded-xl overflow-hidden shadow-md bg-surface-container-highest">
+<!-- Base Styled Map Background for Douala Region -->
+<div class="w-full h-full bg-cover bg-center" data-location="Douala, Cameroon" style=""></div>
+<!-- Stylized Radar & Hydrological Vector Canvas Simulation (SVG Cartographic Overlays) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="none" viewbox="0 0 400 400">
+<defs>
+<lineargradient id="floodGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0060a8" stop-opacity="0.65"></stop>
+<stop offset="60%" stop-color="#47a1ff" stop-opacity="0.55"></stop>
+<stop offset="100%" stop-color="#71f8e4" stop-opacity="0.4"></stop>
+</lineargradient>
+<filter height="140%" id="radarGlow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Wouri Estuary Permanent Water Channel -->
+<path d="M 0,220 C 70,210 110,240 160,205 C 210,170 240,140 280,110 C 310,90 350,70 400,60 L 400,0 L 0,0 Z" fill="#001026" opacity="0.35"></path>
+<!-- Dynamic Flood Inundation Polygons (NISAR August 3 pass) -->
+<!-- Makèpè / Kambo Basin Flood Plume -->
+<path d="M 230,130 C 260,125 300,140 310,165 C 320,195 295,220 260,210 C 235,200 215,160 230,130 Z" fill="url(#floodGrad)" filter="url(#radarGlow)"></path>
+<path d="M 245,145 C 265,140 285,150 290,165 C 295,185 275,195 260,190 C 245,185 235,160 245,145 Z" fill="#47a1ff" opacity="0.6"></path>
+<!-- Bassa & Ndokoti Inundated Corridor -->
+<path d="M 180,210 C 210,205 240,225 245,250 C 250,270 230,290 200,285 C 170,280 165,240 180,210 Z" fill="url(#floodGrad)" filter="url(#radarGlow)"></path>
+<path d="M 195,225 C 215,220 230,230 232,245 C 235,260 220,270 205,268 C 190,265 185,245 195,225 Z" fill="#47a1ff" opacity="0.5"></path>
+<!-- Bépanda Low-lying Flood Pocket -->
+<path d="M 130,170 C 155,165 170,180 172,195 C 175,215 150,225 135,220 C 120,215 118,190 130,170 Z" fill="url(#floodGrad)"></path>
+<!-- Bonabéri Shoreline Overflow -->
+<path d="M 60,110 C 90,105 120,130 115,155 C 110,175 80,180 65,165 C 50,150 45,125 60,110 Z" fill="url(#floodGrad)"></path>
+<!-- Major Drainage Canals (Blue Dash Lines) -->
+<path d="M 260,120 Q 230,170 190,205 T 140,240" fill="none" opacity="0.8" stroke="#71f8e4" stroke-dasharray="4 3" stroke-width="2"></path>
+<path d="M 310,170 Q 270,220 220,250" fill="none" opacity="0.7" stroke="#71f8e4" stroke-dasharray="3 3" stroke-width="1.5"></path>
+</svg>
+<!-- Neighborhood Labels with HUD Styling -->
+<div class="absolute top-[28%] left-[16%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<span class="bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow-sm">Bonabéri</span>
+</div>
+<div class="absolute top-[48%] left-[28%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<span class="bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow-sm">Akwa</span>
+</div>
+<div class="absolute top-[62%] left-[24%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<span class="bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow-sm">Bonanjo</span>
+</div>
+<div class="absolute top-[42%] left-[42%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<span class="bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow-sm">Bépanda</span>
+</div>
+<div class="absolute top-[35%] left-[70%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<span class="bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow-sm">Makèpè</span>
+</div>
+<div class="absolute top-[58%] left-[58%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<span class="bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow-sm">Bassa / Ndokoti</span>
+</div>
+<div class="absolute top-[75%] left-[65%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<span class="bg-surface/90 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow-sm">Village</span>
+</div>
+<!-- Critical Warning Hotspot Interactive Markers (Pulsing Rings) -->
+<!-- Hotspot 1: Makèpè Missoke (Critical Canal Overflow) -->
+<button aria-label="Inspect Makèpè Missoke Hotspot" class="hotspot-pin absolute top-[43%] left-[67%] -translate-x-1/2 -translate-y-1/2 p-2 group focus:outline-none" onclick="selectHotspot('Makèpè Missoke', '84cm water level', 'CRITICAL', 'Canal drainage blocked by debris')" type="button">
+<span class="relative flex h-5 w-5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-80"></span>
+<span class="relative inline-flex items-center justify-center rounded-full h-5 w-5 bg-error text-on-error shadow-md">
+<span class="material-symbols-outlined text-[13px]">priority_high</span>
+</span>
+</span>
+</button>
+<!-- Hotspot 2: Bassa Ndokoti Junction -->
+<button aria-label="Inspect Ndokoti Intersection Hotspot" class="hotspot-pin absolute top-[60%] left-[55%] -translate-x-1/2 -translate-y-1/2 p-2 group focus:outline-none" onclick="selectHotspot('Ndokoti Carrefour', '62cm flood depth', 'WARNING', 'Severe traffic cut-off on RN3')" type="button">
+<span class="relative flex h-5 w-5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
+<span class="relative inline-flex items-center justify-center rounded-full h-5 w-5 bg-secondary text-on-secondary shadow-md">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+</span>
+</span>
+</button>
+<!-- Hotspot 3: Bépanda TSF Lowlands -->
+<button aria-label="Inspect Bépanda TSF Hotspot" class="hotspot-pin absolute top-[48%] left-[44%] -translate-x-1/2 -translate-y-1/2 p-2 group focus:outline-none" onclick="selectHotspot('Bépanda TSF', '45cm surface inundation', 'WARNING', 'Mboppi tributary backwater')" type="button">
+<span class="relative flex h-4 w-4">
+<span class="relative inline-flex items-center justify-center rounded-full h-4 w-4 bg-error text-on-error shadow-md">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+</span>
+</button>
+<!-- Map HUD Controls (Top Right: Zoom / Compass) -->
+<div class="absolute top-3 right-3 flex flex-col gap-1.5">
+<div class="bg-surface/90 backdrop-blur-md rounded-lg shadow-sm flex flex-col overflow-hidden">
+<button aria-label="Zoom in" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<div class="h-[1px] bg-surface-variant"></div>
+<button aria-label="Zoom out" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+</div>
+<button aria-label="Recenter Douala" class="w-8 h-8 rounded-lg bg-surface/90 backdrop-blur-md shadow-sm flex items-center justify-center text-secondary active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</button>
+</div>
+<!-- Radar SAR Sensor Pass Metadata Pill (Bottom Left HUD) -->
+<div class="absolute bottom-3 left-3 bg-primary-container/85 backdrop-blur-md px-2.5 py-1.5 rounded-lg shadow-sm text-on-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">NISAR L-SAR Band</span>
+<span class="text-[9px] opacity-80 leading-none">Ascending Path • 05:42 GMT</span>
+</div>
+</div>
+</div>
+<!-- Active Hotspot Modal Quick Detail Drawer (Reactive Micro-card) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start justify-between gap-space-sm transition-all duration-200" id="hotspotDrawer">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-error-container text-error flex items-center justify-center flex-shrink-0" id="drawerIconBg">
+<span class="material-symbols-outlined text-[20px]" id="drawerIcon">crisis_alert</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary font-bold truncate" id="drawerTitle">Makèpè Missoke</span>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider" id="drawerBadge">CRITICAL</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold" id="drawerDepth">Water level: 84cm above road surface</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate" id="drawerDesc">Major culvert clogged with refuse. 340 homes isolated.</span>
+</div>
+</div>
+<button aria-label="Dismiss detail" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface" onclick="dismissDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Bottom Map Legend Card -->
+<div class="px-margin">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">map</span>
+          Cartographic Legend
+        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">NISAR Level 2-DP</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<!-- Legend Item 1: Permanent Water -->
+<div class="flex items-center gap-2 p-1.5 rounded-lg bg-surface-container-low">
+<span class="w-4 h-4 rounded-md bg-[#001026] flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate">Permanent Water</span>
+<span class="text-[10px] text-on-surface-variant truncate">Wouri Estuary</span>
+</div>
+</div>
+<!-- Legend Item 2: Flood Extent -->
+<div class="flex items-center gap-2 p-1.5 rounded-lg bg-surface-container-low">
+<span class="w-4 h-4 rounded-md bg-gradient-to-r from-secondary to-secondary-container flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate">Flood Extent</span>
+<span class="text-[10px] text-on-surface-variant truncate">Radar Reflective</span>
+</div>
+</div>
+<!-- Legend Item 3: Hotspot Pin -->
+<div class="flex items-center gap-2 p-1.5 rounded-lg bg-surface-container-low">
+<span class="w-4 h-4 rounded-full bg-error flex-shrink-0 flex items-center justify-center text-on-error">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate">Critical Hotspot</span>
+<span class="text-[10px] text-on-surface-variant truncate">&gt;50cm Inundation</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Context Action Button for AI Briefing on Current Date -->
+<div class="px-margin pt-space-xs">
+<button class="w-full min-h-[48px] px-space-md py-space-sm rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-md hover:bg-secondary active:scale-[0.99] transition-all flex items-center justify-between" type="button">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-tertiary-container text-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<span class="text-left font-semibold">Ask AI about August 03 status</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary-fixed font-label-sm text-label-sm">
+<span>Générer le briefing</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Interactive Client-side Script for Hotspots and Timeline -->
+<script>
+  function selectHotspot(name, depth, badgeText, description) {
+    var drawer = document.getElementById('hotspotDrawer');
+    var title = document.getElementById('drawerTitle');
+    var depthEl = document.getElementById('drawerDepth');
+    var descEl = document.getElementById('drawerDesc');
+    var badge = document.getElementById('drawerBadge');
+    var iconBg = document.getElementById('drawerIconBg');
+    var icon = document.getElementById('drawerIcon');
+
+    if (!drawer) return;
+
+    title.textContent = name;
+    depthEl.textContent = depth;
+    descEl.textContent = description;
+    badge.textContent = badgeText;
+
+    if (badgeText === 'CRITICAL') {
+      badge.className = 'bg-error text-on-error font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider font-bold';
+      iconBg.className = 'w-9 h-9 rounded-lg bg-error-container text-error flex items-center justify-center flex-shrink-0';
+      icon.textContent = 'crisis_alert';
+    } else {
+      badge.className = 'bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider font-bold';
+      iconBg.className = 'w-9 h-9 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center flex-shrink-0';
+      icon.textContent = 'warning';
+    }
+
+    drawer.classList.remove('hidden');
+    drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function dismissDrawer() {
+    var drawer = document.getElementById('hotspotDrawer');
+    if (drawer) {
+      drawer.classList.add('hidden');
+    }
+  }
+
+  // Playback toggle micro-interaction
+  var isPlaying = false;
+  var playBtn = document.getElementById('playbackToggle');
+  var playIcon = document.getElementById('playbackIcon');
+
+  if (playBtn && playIcon) {
+    playBtn.addEventListener('click', function() {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        playIcon.textContent = 'pause';
+        playBtn.classList.replace('bg-primary-container', 'bg-secondary');
+      } else {
+        playIcon.textContent = 'play_arrow';
+        playBtn.classList.replace('bg-secondary', 'bg-primary-container');
+      }
+    });
+  }
+
+  // Timeline Chip selection styling
+  document.querySelectorAll('.timeline-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('.timeline-chip').forEach(function(c) {
+        c.className = 'timeline-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container';
+      });
+      chip.className = 'timeline-chip active-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-secondary text-on-secondary shadow-sm flex items-center gap-1 font-bold';
+    });
+  });
+
+  // Layer toggles
+  document.querySelectorAll('.layer-pill').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      var isActive = pill.classList.contains('bg-primary-container');
+      if (isActive) {
+        pill.classList.remove('bg-primary-container', 'text-on-primary');
+        pill.classList.add('bg-surface-container-lowest', 'text-on-surface');
+      } else {
+        pill.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+        pill.classList.add('bg-primary-container', 'text-on-primary');
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_16px_rgba(11,37,69,0.06)]" data-active-classes="text-secondary font-semibold"><div class="flex items-center justify-around h-20 px-space-xs"><a aria-current="page" aria-label="Carte" class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 rounded-xl transition-colors gap-0.5 text-secondary font-semibold" data-path="map" href="#"><span class="material-symbols-outlined text-[22px]">map</span><span class="font-label-sm text-label-sm">Carte</span></a><a aria-label="Comparer" class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="compare" href="#"><span class="material-symbols-outlined text-[22px]">view_column</span><span class="font-label-sm text-label-sm">Comparer</span></a><a aria-label="Points chauds" class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="hotspots" href="#"><span class="material-symbols-outlined text-[22px]">local_fire_department</span><span class="font-label-sm text-label-sm">Points chauds</span></a><a aria-label="Statistiques" class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="stats" href="#"><span class="material-symbols-outlined text-[22px]">bar_chart</span><span class="font-label-sm text-label-sm">Statistiques</span></a><a aria-label="À propos" class="flex flex-col items-center justify-center min-w-[48px] min-h-[48px] px-2 py-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="about" href="#"><span class="material-symbols-outlined text-[22px]">info</span><span class="font-label-sm text-label-sm">À propos</span></a></div></nav></body></html>
