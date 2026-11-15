@@ -1,0 +1,28 @@
+# FloodSight — data pipeline requirements
+# Everything is free; no GPU and no paid service is required.
+# Install:  pip install -r requirements.txt
+#
+# Notebook 01 (data collection)
+
+asf-search
+earthaccess
+pystac-client
+planetary-computer
+osmnx
+
+# Notebook 02 (flood detection v2)
+
+h5py
+xarray
+rioxarray
+rasterio
+numpy
+scipy
+scikit-image
+scikit-learn
+geopandas
+pyproj
+matplotlib
+
+# Notebooks run on Google Colab, so notebook-only helpers are not pinned here:
+#   google.colab  (preinstalled on Colab)

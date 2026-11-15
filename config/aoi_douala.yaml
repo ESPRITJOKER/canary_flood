@@ -1,0 +1,54 @@
+# FloodSight — area of interest and detection parameters
+# Section 7 of the requirements spec. Every notebook reads these values; nothing
+# is hard-coded in the pipeline.
+
+aoi:
+  name: Douala
+  country: Cameroon
+  # bbox order matches the NISAR / ASF search: west, south, east, north
+  bbox: [9.60, 3.95, 9.80, 4.15]
+  # Leaflet image-overlay order, as exported to web/public/data/bounds.json
+  leaflet_bounds: [[3.95, 9.60], [4.15, 9.80]]
+
+nisar:
+  product: L2 GCOV
+  polarisations: [HH, HV]
+  track: 58
+  frame: 4
+  direction: ascending
+  first_pass: 2026-06-18
+  last_pass: 2026-10-28
+  expected_passes: 11
+
+detection:
+  # water mask per date: Otsu on the smoothed HH dB stack, capped
+  db_min: -24
+  db_max: -14
+  speckle_median_px: 5
+  # flood = water AND at least this much darker than the pixel's seasonal normal
+  drop_db: 3.0
+  # possible flooded streets = built-up AND at least this much brighter (double bounce)
+  bright_db: 3.0
+  patch_min_m2: 10000          # remove patches under 1 ha
+
+masks:
+  jrc_permanent_occurrence: 0.5   # JRC global surface water
+  radar_permanent_fraction: 0.8   # water on >= 80 % of passes
+  shore_buffer_m: 60
+  max_elevation_m: 20            # Copernicus DEM
+  max_slope_deg: 5
+  mangrove_class_worldcover: 95
+  built_up_class_worldcover: 50
+
+impact:
+  place_radius_m: 1000           # flooded km2 within 1 km of each OSM place
+
+export:
+  web_dir: web/public/data
+  files:
+    - bounds.json
+    - flood_<date>.png
+    - urban_signal_<date>.png
+    - permanent_water.png
+    - hotspots.png
+    - stats.json
