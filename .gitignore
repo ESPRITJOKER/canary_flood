@@ -1,0 +1,27 @@
+# --- OS / secrets -----------------------------------------------------------
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+
+# --- Node / web (see also web/.gitignore) -----------------------------------
+node_modules/
+dist/
+dist-ssr/
+.vercel/
+*.tsbuildinfo
+
+# --- Big data: raw radar stays in Google Drive, never in Git ---------------
+data/raw/
+data/processed/
+*.h5
+*.hdf5
+*.zip
