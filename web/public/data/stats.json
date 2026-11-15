@@ -3,7 +3,7 @@
     "data_status": "sample",
     "generated_at": "2026-11-15T09:11:09Z",
     "product": "NISAR L2 GCOV, HH + HV, track 58 / frame 4 / ascending",
-    "source": "Placeholder values inside the range reported by notebook 02 (0.04-0.29 km2). Replace with web_v2/ output; field names and types stay the same.",
+    "source": "Per-pass flood stats are the real FloodSight_02 v2 run (notebook 02 output, HH, track 58/frame 4). Rainfall not yet joined (GPM IMERG section D pending); map overlays, neighbourhoods and hotspots are still sample placeholders until the full web_v2/ export is copied in.",
     "pipeline_version": "v2 (sample shapes)",
     "aoi": "Douala, Cameroon"
   },
@@ -36,91 +36,91 @@
   "dates": [
     {
       "date": "2026-06-18",
-      "flooded_km2": 0.17,
+      "flooded_km2": 0.146,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 1.9,
-      "water_threshold_db": -13.6,
-      "rain_prev3d_mm": 42.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.57,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-06-30",
-      "flooded_km2": 0.29,
+      "flooded_km2": 0.244,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 2.4,
-      "water_threshold_db": -13.9,
-      "rain_prev3d_mm": 96.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.57,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-07-12",
-      "flooded_km2": 0.12,
+      "flooded_km2": 0.08,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 1.6,
-      "water_threshold_db": -13.5,
-      "rain_prev3d_mm": 31.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.59,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-07-24",
-      "flooded_km2": 0.05,
+      "flooded_km2": 0.095,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 1.2,
-      "water_threshold_db": -13.3,
-      "rain_prev3d_mm": 18.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.86,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-08-17",
-      "flooded_km2": 0.08,
+      "flooded_km2": 0.041,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 2.0,
-      "water_threshold_db": -13.4,
-      "rain_prev3d_mm": 64.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.15,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-08-29",
-      "flooded_km2": 0.14,
+      "flooded_km2": 0.1,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 2.2,
-      "water_threshold_db": -13.7,
-      "rain_prev3d_mm": 88.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.11,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-09-10",
-      "flooded_km2": 0.07,
+      "flooded_km2": 0.168,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 1.5,
-      "water_threshold_db": -13.2,
-      "rain_prev3d_mm": 22.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -8.87,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-09-22",
-      "flooded_km2": 0.1,
+      "flooded_km2": 0.055,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 1.8,
-      "water_threshold_db": -13.6,
-      "rain_prev3d_mm": 47.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.22,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-10-04",
-      "flooded_km2": 0.16,
+      "flooded_km2": 0.111,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 2.1,
-      "water_threshold_db": -13.8,
-      "rain_prev3d_mm": 71.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.52,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-10-16",
-      "flooded_km2": 0.21,
+      "flooded_km2": 0.114,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 2.0,
-      "water_threshold_db": -13.7,
-      "rain_prev3d_mm": 55.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.13,
+      "rain_prev3d_mm": null
     },
     {
       "date": "2026-10-28",
-      "flooded_km2": 0.29,
+      "flooded_km2": 0.291,
       "urban_signal_km2": 0.0,
-      "tidal_mangrove_water_km2": 2.3,
-      "water_threshold_db": -13.9,
-      "rain_prev3d_mm": 103.0
+      "tidal_mangrove_water_km2": 0.0,
+      "water_threshold_db": -9.63,
+      "rain_prev3d_mm": null
     }
   ],
   "neighbourhoods": [
