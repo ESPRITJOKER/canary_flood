@@ -8,7 +8,7 @@ Lions Roar Labs · NASA Space Apps Challenge 2026 · Challenge: **"Dancing with 
 
 | | |
 |---|---|
-| 🌍 Live app | `TODO: Vercel URL` |
+| 🌍 Live app | **https://canaryflood-web-k66i.vercel.app/** |
 | 🎬 Demo video | `TODO: video link` |
 | 📊 Slides | [`docs/pitch/`](docs/pitch/) |
 
