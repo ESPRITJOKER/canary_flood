@@ -12,7 +12,7 @@ Lions Roar Labs · NASA Space Apps Challenge 2026 · Challenge: **"Dancing with 
 | 🎬 Demo video | `TODO: video link` |
 | 📊 Slides | [`docs/pitch/`](docs/pitch/) |
 
-![FloodSight screenshot](docs/pitch/screenshots/01_map_dashboard.png)
+![FloodSight screenshot](docs/pitch/screenshots/live_app.png)
 
 ---
 
